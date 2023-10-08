@@ -45,9 +45,3 @@ void sumarEnergiaParticulas(double *arregloEnergiaParticulas, int N, int posicio
     }
 
 }
-
-
-
-
-
-

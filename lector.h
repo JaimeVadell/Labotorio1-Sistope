@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "calculadoraBombardeo.h"
-#include "impresionNormalizado.h"
+#include "impresion.h"
 
 /* Entrada: Recibe el nombre del archivo a buscar y el largo de impacto(largo arreglo)
 Salida: N/A
 Descripcion: Lee el archivo y llama a las funciones necesarias para calcular la energia de todas las celdas y la maxima 
  posteriormente normaliza el arreglo y lo imprime */
-void leerArchivo(const char *nombreArchivo, int N) {
+void leerArchivo(const char *nombreArchivo, int N, int flagD, const char *nombreArchivoSalida) {
     FILE *archivo = fopen(nombreArchivo, "r");
     
     if (archivo == NULL) {
@@ -30,16 +30,13 @@ void leerArchivo(const char *nombreArchivo, int N) {
         
         sumarEnergiaParticulas(arregloEnergiaParticulas, N, posicion, energia, &posicionEnergiaMaximaActual);
     }
-    
     fclose(archivo);
-    printf("Energia Maxima %f \n", arregloEnergiaParticulas[posicionEnergiaMaximaActual]);
-    imprimirNormalizado(arregloEnergiaParticulas,posicionEnergiaMaximaActual, N);
+
+    // Imprimir arreglo en Orden o Normalizado
+    if(!flagD){imprimirEnOrden(arregloEnergiaParticulas,posicionEnergiaMaximaActual, N, nombreArchivoSalida);}
+    
+    else{imprimirNormalizado(arregloEnergiaParticulas,posicionEnergiaMaximaActual, N, nombreArchivoSalida);}
 
     //Libera el arreglo de la memoria
     free(arregloEnergiaParticulas);
-}
-
-int main(){
-    leerArchivo("test1_35.txt", 35);
-    return 0;
 }

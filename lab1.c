@@ -5,6 +5,7 @@
 #include "funciones.h"
 
 int main(int argc, char *argv[]) {
+    // Variables que representan los argumentos de entrada al programa
     int N = 0;
     char *archivo_entrada = NULL;
     char *archivo_salida = NULL;

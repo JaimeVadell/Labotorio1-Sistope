@@ -6,8 +6,8 @@
 
 /* Entrada: Recibe el nombre del archivo a buscar y el largo de impacto(largo arreglo)
 Salida: N/A
-Descripcion: Lee el archivo y llama a las funciones necesarias para calcular la energia de todas las celdas y la maxima 
- posteriormente normaliza el arreglo y lo imprime */
+Descripcion: Lee el archivo y llama a las funciones necesarias para calcular la energia de todas las celdas y la maxima energia presente,
+posteriormente imprime el arreglo de acuerdo a la condicion de flagD*/
 void leerArchivo(const char *nombreArchivo, int N, int flagD, const char *nombreArchivoSalida) {
     FILE *archivo = fopen(nombreArchivo, "r");
     
@@ -87,7 +87,7 @@ void imprimirEnOrden(double * arregloEnergiaParticulas, int posicionEnergiaMaxim
 
 
 
-// Entrada: Recibe eel largo de impacto(largo arreglo)
+// Entrada: Recibe el largo de impacto(largo arreglo)
 // Salida: Retorna un arreglo de doubles con el largo de impacto
 // Descripcion: Crea un arreglo de doubles con el largo de impacto y lo inicializa en 0
 double* CrearArregloEnergiaParticulas(int N){
@@ -114,7 +114,7 @@ y la energia de la particula impactada
 Salida: N/A
 
 Descripcion: Suma la energia de la particula impactada a la posicion
-correspondiente(junto con sus vecinos) en el arreglo de las energias de las particulas 
+correspondiente(junto con sus vecinos) en el arreglo de las energias de las particulas. Posteriormente actualiaza la energia maxima actual de ser el caso
 */
 void sumarEnergiaParticulas(double *arregloEnergiaParticulas, int N, int posicionImpactoParticula, int energiaParticula, int * posicionEnergiaMaximaActual){
     double largoArreglo = (double) N;

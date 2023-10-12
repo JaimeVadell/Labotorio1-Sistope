@@ -1,3 +1,5 @@
+//Cabeceras de funciones.c
+
 void leerArchivo(const char *nombreArchivo, int N, int flagD, const char *nombreArchivoSalida) ;
 void imprimirNormalizado(double * arregloEnergiaParticulas, int posicionEnergiaMaximaActual, int N, const char *nombreArchivoSalida);
 void imprimirEnOrden(double * arregloEnergiaParticulas, int posicionEnergiaMaximaActual, int N, const char *nombreArchivoSalida);
